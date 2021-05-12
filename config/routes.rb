@@ -12,4 +12,5 @@ get("/delete_photo/:path_photo_delete_id",{:controller => "photos", :action => "
 get("/insert_photo_record", {:controller => "photos", :action => "create"})
 get("/update_photo/:modify_photo_id", {:controller => "photos", :action => "edit"})
 get("/insert_comment_record", {:controller => "photos", :action => "insert_comment"})
+
 end

@@ -8,11 +8,8 @@ class UsersController < ApplicationController
         url_username = params.fetch("path_username")
         matching_users = User.where({ :username => url_username})
         @the_user = matching_users.at(0)
-        if @the_user == nil
-            redirect_to("/404")
-        else
-            render({ :template => "user_templates/show.html.erb"})
-        end
+       
+        render({ :template => "user_templates/show.html.erb"})
     end
     
     def create
@@ -35,4 +32,5 @@ class UsersController < ApplicationController
 
         redirect_to("/users/"+the_user.username) 
     end 
+    
 end

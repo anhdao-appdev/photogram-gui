@@ -53,17 +53,14 @@
         </td>
 
         <td>
-        2019-02-02 22:45:19 UTC
+            <%= a_photo.created_at %>
         </td>
         
         <td>
-        <a href="/photos/948">
+        <a href="/photos/<%=a_photo.id%>">
             Show details
         </a>
         </td>
     </tr>
   <% end %>
 </table>
-
-  </body>
-</html>

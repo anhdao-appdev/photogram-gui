@@ -10,11 +10,8 @@ class PhotosController < ApplicationController
         url_photo_id = params.fetch("path_photo_id")
         matching_photos = Photo.where({ :id => url_photo_id})
         @the_photo = matching_photos.at(0)
-        if @the_photo == nil
-            redirect_to("/404")
-        else
-            render({ :template => "photo_templates/show.html.erb"})
-        end
+        
+        render({ :template => "photo_templates/show.html.erb"})
     end
 
     def delete
@@ -23,7 +20,6 @@ class PhotosController < ApplicationController
         the_photo = matching_photos.at(0)
         the_photo.destroy
         redirect_to("/photos")
-        #render({ :template => "photo_templates/delete.html.erb"})
     end
 
     def create
